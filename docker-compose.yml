@@ -1,0 +1,22 @@
+services:
+  portainer:
+    container_name: portainer
+    image: portainer/portainer-ce
+    restart: always
+    ports:
+      - 8000:8000
+      - 9000:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      # - portainer_data:/data
+  
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower
+    restart: always
+    ports:
+      - 
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /home/scotty/.docker/config.json:/config.json
+
