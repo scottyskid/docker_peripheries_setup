@@ -14,8 +14,6 @@ services:
     container_name: watchtower
     image: containrrr/watchtower
     restart: always
-    ports:
-      - 
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /home/scotty/.docker/config.json:/config.json
